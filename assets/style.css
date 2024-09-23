@@ -1,0 +1,301 @@
+* {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: #111111;
+    color: #FFFFFF;
+    scroll-behavior: smooth;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+header div {
+    display: flex;
+    background-color: #111111;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    position: relative;
+}
+
+nav a:hover {
+    color: #7A7A7A;
+}
+
+nav a:hover::after {
+    transform: scale(1);
+    transform-origin: left;
+}
+
+nav a::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #7A7A7A;
+    height: 1px;
+    width: 100%;
+    transform: scale(0);
+    transform-origin: right;
+    transition: transform 0.2s ease-in-out;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    color: #FFFFFF;
+}
+
+/* Base heading sizes */
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+
+h5 {
+    font-size: 1.6rem;
+}
+
+h6 {
+    font-size: 1.4rem;
+}
+
+main {
+    padding: 1rem 2rem 1rem 2rem; /* Adjusted padding to accommodate the fixed header */
+}
+
+main section#about {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    color: #7A7A7A;
+    flex-wrap: wrap; /* Allow the content to wrap on smaller screens */
+    animation: moveUp 1s ease-out forwards;
+}
+
+main section#about div.description {
+    width: 100%; /* Set to 100% by default for responsiveness */
+    max-width: 550px; /* Max width to keep it from being too wide */
+}
+
+.text-white {
+    color: #FFFFFF;
+}
+
+img {
+    width: 20%;
+    padding: 4px;
+    background-size: cover;
+    max-width: 100%; /* Make images responsive */
+    height: auto;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+main section#projects {
+    padding: 5rem 2rem 1rem 2rem;
+    height: 100vh;
+    justify-content: center;
+    gap: 2rem;
+    animation: moveUp 1s ease-out forwards;
+}
+
+main section#projects .container{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+main section#projects h2{
+    text-align: center;
+}
+
+main section#projects article{
+    width: 300px;
+    height: 300px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-image: linear-gradient(45deg, #111111, #7a7a7a);
+    backdrop-filter: blur(200px);
+}
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #111;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+footer a:last-child {
+    margin-right: 0;
+}
+
+footer a:hover {
+    color: #7A7A7A; /* Change color on hover */
+}
+
+footer i {
+    margin-right: 5px;
+}
+/* Responsive Design with Media Queries */
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 2.5rem; /* Adjust the heading size */
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    h4 {
+        font-size: 1.6rem;
+    }
+
+    h5 {
+        font-size: 1.4rem;
+    }
+
+    h6 {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        gap: 1rem; /* Reduce the gap between nav links on smaller screens */
+    }
+
+    main section#about{
+        flex-direction: column;
+        gap: 0;
+    }
+    img{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    h4 {
+        font-size: 1.4rem;
+    }
+
+    h5 {
+        font-size: 1.2rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+    nav {
+        display: none; /* Hide navigation on smaller screens */
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+
+    h6 {
+        font-size: 0.9rem;
+    }
+
+    main section#projects article{
+        height: auto;
+    }
+}
