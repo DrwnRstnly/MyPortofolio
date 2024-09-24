@@ -137,11 +137,11 @@ img {
     }
 }
 main section#projects {
-    padding: 5rem 2rem 1rem 2rem;
-    height: 100vh;
+    padding: 6rem 2rem 6rem 2rem;
+    min-height: 100vh;
     justify-content: center;
     gap: 2rem;
-    animation: moveUp 1s ease-out forwards;
+    animation: moveUp 1s ease-out forwards;;
 }
 
 main section#projects .container{
